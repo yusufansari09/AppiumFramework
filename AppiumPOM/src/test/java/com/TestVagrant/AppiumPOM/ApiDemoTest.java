@@ -1,6 +1,7 @@
 package com.TestVagrant.AppiumPOM;
 
 import org.testng.annotations.Test;
+import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
