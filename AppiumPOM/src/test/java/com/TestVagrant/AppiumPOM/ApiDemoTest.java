@@ -32,23 +32,23 @@ public class ApiDemoTest extends Base{
 		p.clickCloseButton();
 	}
 	
-//	@BeforeTest
-//	public void killAllNodes() throws IOException, InterruptedException
-//	{
-//		Runtime.getRuntime().exec("killall node");
-//		normalSleep(3000);
-//	}
-//	
-//	@BeforeClass
-//	public void startServerForTests()
-//	{
-//		service = startServer();
-//	}
-//	
-//	@AfterClass
-//	public void stopServer()
-//	{
-//		service.stop();
-//	}
+	@BeforeTest
+	public void killAllNodes() throws IOException, InterruptedException
+	{
+		Runtime.getRuntime().exec("killall node");
+		normalSleep(3000);
+	}
+	
+	@BeforeClass
+	public void startServerForTests()
+	{
+		service = startServer();
+	}
+	
+	@AfterClass
+	public void stopServer()
+	{
+		service.stop();
+	}
 
 }

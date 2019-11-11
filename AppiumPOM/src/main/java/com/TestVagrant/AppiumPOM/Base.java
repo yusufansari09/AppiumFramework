@@ -19,40 +19,40 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
 public class Base {
-//	public static AppiumDriverLocalService service;
+	public static AppiumDriverLocalService service;
 	public static AndroidDriver<AndroidElement> driver;
 
-//	public static AppiumDriverLocalService startServer()
-//	{
-//		boolean serverInUse=checkIfServerIsRunnning(4723);
-//		if(!serverInUse)
-//		{
-//		service = AppiumDriverLocalService.buildDefaultService();
-//		service.start();
-//		}
-//		return service;
-//	}
-//
-//	public static boolean checkIfServerIsRunnning(int port) {
-//
-//		boolean isServerRunning = false;
-//		ServerSocket serverSocket;
-//		try {
-//			serverSocket = new ServerSocket(port);
-//			serverSocket.close();
-//		} catch (IOException e) {
-//			isServerRunning = true;
-//		} finally {
-//			serverSocket = null;
-//		}
-//		return isServerRunning;
-//	}
-//	
-//	public static void startEmulator() throws IOException, InterruptedException
-//	{
-//		Runtime.getRuntime().exec(System.getProperty("user.dir")+"/src/main/java/resources/yusufEmulator");
-//		normalSleep(6000);
-//	}
+	public static AppiumDriverLocalService startServer()
+	{
+		boolean serverInUse=checkIfServerIsRunnning(4723);
+		if(!serverInUse)
+		{
+		service = AppiumDriverLocalService.buildDefaultService();
+		service.start();
+		}
+		return service;
+	}
+
+	public static boolean checkIfServerIsRunnning(int port) {
+
+		boolean isServerRunning = false;
+		ServerSocket serverSocket;
+		try {
+			serverSocket = new ServerSocket(port);
+			serverSocket.close();
+		} catch (IOException e) {
+			isServerRunning = true;
+		} finally {
+			serverSocket = null;
+		}
+		return isServerRunning;
+	}
+	
+	public static void startEmulator() throws IOException, InterruptedException
+	{
+		Runtime.getRuntime().exec(System.getProperty("user.dir")+"/src/main/java/resources/yusufEmulator");
+		normalSleep(6000);
+	}
 
 	public static AndroidDriver<AndroidElement> getCapabilities(String appName) throws IOException, InterruptedException
 	{
@@ -67,10 +67,10 @@ public class Base {
 		String device=(String) prop.get("deviceName");
 //		String device = prop.getProperty("deviceName"); //for running through Terminal
 		
-//		if(device.contains("Emulator"))
-//		{
-//			startEmulator();
-//		}
+		if(device.contains("Emulator"))
+		{
+			startEmulator();
+		}
 		d.setCapability(MobileCapabilityType.DEVICE_NAME, device);
 		d.setCapability(MobileCapabilityType.AUTOMATION_NAME,"uiautomator2");
 		d.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,14);

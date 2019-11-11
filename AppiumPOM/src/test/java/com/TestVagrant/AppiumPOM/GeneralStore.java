@@ -46,16 +46,16 @@ public class GeneralStore extends Base{
 		}
 	}
 	
-//	@BeforeClass
-//	public void startServerForTests()
-//	{
-//		service = startServer();
-//	}
-//	
-//	@AfterClass
-//	public void stopServer()
-//	{
-//		service.stop();
-//	}
+	@BeforeClass
+	public void startServerForTests()
+	{
+		service = startServer();
+	}
+	
+	@AfterClass
+	public void stopServer()
+	{
+		service.stop();
+	}
 
 }
